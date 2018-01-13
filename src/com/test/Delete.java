@@ -16,6 +16,7 @@ public class Delete {
             session.delete(userEntity);
             tran.commit();
         }
+        //git test
         session.close();
     }
 }
