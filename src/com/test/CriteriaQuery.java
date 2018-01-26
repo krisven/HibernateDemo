@@ -16,6 +16,9 @@ public class CriteriaQuery {
 
         Criteria c = s.createCriteria(UserEntity.class);
         c.add(Restrictions.like("username", "%a%"));
+        c.setFirstResult(0);//从第1条记录开始
+        c.setMaxResults(1);//查询1个结果
+
         List<UserEntity> ps = c.list();
         for(UserEntity u : ps){
             System.out.println(u.getUsername());
