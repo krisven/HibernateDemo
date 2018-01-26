@@ -20,6 +20,11 @@ public class HQLquery {
             System.out.println(userEntity.getUsername());
         }
 
+        //统计函数Count
+        Query query1 = s.createQuery("select count(*) from UserEntity ");
+        long total = (long) query1.uniqueResult();
+        System.out.println(total);
+
         s.getTransaction().commit();
         s.close();
         sf.close();
